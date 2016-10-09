@@ -9,5 +9,8 @@ public class NumericalCaster66 {
         int a = 44444;
         short b = (short)a;
         System.out.print(b);
+        // Integer i = 7;
+        // String s = (String) i; Cast will fail at compile time, since it is not possible to
+        // convert an integer into a string.
     }
 }
