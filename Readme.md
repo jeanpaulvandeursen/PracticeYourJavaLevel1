@@ -57,7 +57,9 @@ long firstLong = 7__000____000_000L;
 ```
 - Float precision is 6-7 digits
 - When absolute precision is required, use BigDecimal
-- With _casting_ a type conversion is forced, example:
+
+## Casting
+With _casting_ a type conversion is forced, example:
 ```Java
 int a = 50;
 short b = (short)a;
@@ -66,4 +68,15 @@ The cast will be done, regardless of the fact that the value may not fit into th
  the previous example when a is larger than 32767. An object of any class can always be casted 
  into a variable of any of its ancestor classes, a so-called _upcast_. The other way round, 
  casting to a more specific class type is called a _downcast_, which will not always work. If 
- there is a chance that it will work at runtime, no compilation error will be given.
+ there is a chance that it will work at runtime, no compilation error will be given.  
+ The compiler will perform an implicit cast when appropriate, for example:
+ ```Java
+ int a = 10; long b = 30;
+ long result = a + b; // a is implicitly cast to a long
+ ```
+ The compiler will not do this if there is a risk of data loss, it will then insist on making the
+  cast explicit.  
+  To avoid data loss due to type overrun, use the _Math_ class _Exact_ method.
+  
+  ## Constants
+  A constant is declared using the keyword _final_.
